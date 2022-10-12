@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @State private var selectedFilter: TweetFilterViewModel = .tweets
+    @Namespace var animation
+    
     var body: some View {
         VStack(alignment: .leading) {
             headerView
@@ -16,10 +20,12 @@ struct ProfileView: View {
             
             userInfo
             
+            tweetFilterBar
+            
+            tweetsView
             
             Spacer()
         }
-
     }
 }
 
@@ -146,5 +152,48 @@ extension ProfileView {
         }
         .padding(.horizontal)
 
+    }
+    
+// MARK: Tweet filter bar
+    var tweetFilterBar: some View {
+        HStack {
+            ForEach(TweetFilterViewModel.allCases, id:\.rawValue) { item in
+                VStack {
+                    Text(item.title)
+                        .font(.subheadline)
+                        .fontWeight(selectedFilter == item ? .semibold : .regular)
+                    .foregroundColor(selectedFilter == item ? .black : .gray)
+                
+                if selectedFilter == item {
+                    Capsule()
+                        .foregroundColor(.blue)
+                        .frame(height: 3)
+                        .matchedGeometryEffect(id: "filter", in: animation)
+                } else {
+                    Capsule()
+                        .foregroundColor(.clear)
+                        .frame(height: 3)
+                }
+            }
+                .onTapGesture {
+                    withAnimation(.easeIn) {
+                        self.selectedFilter = item
+                    }
+                    
+                }
+            }
+        }
+        .overlay(Divider().offset(x: 0, y: 16))
+    }
+    
+// MARK: Tweets View
+    var tweetsView: some View {
+        ScrollView {
+            LazyVStack {
+                ForEach(0...9, id: \.self) { _ in
+                    TweetRowView()
+                }
+            }
+        }
     }
 }
