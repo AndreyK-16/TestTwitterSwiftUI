@@ -14,24 +14,8 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-            
 //          header view
-            VStack(alignment: .leading) {
-                HStack { Spacer() }
-                
-                Text("Hello.")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                
-                Text("Welcome back")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-            }
-            .padding(.leading)
-            .foregroundColor(.white)
-            .frame(height: 260)
-            .background(.blue)
-            .clipShape(RoundedShape(corners: [.bottomRight]))
+            AuthHeaderView(title: "Hello.", subtitle: "Welcome back")
             
 //            email, password view
             VStack(spacing: 40) {
