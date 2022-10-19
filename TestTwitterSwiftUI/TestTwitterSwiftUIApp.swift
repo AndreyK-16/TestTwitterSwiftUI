@@ -11,6 +11,8 @@ import Firebase
 @main
 struct TestTwitterSwiftUIApp: App {
     
+    @StateObject var viewModel = AuthViewModel()
+    
     init() {
         FirebaseApp.configure()
     }
@@ -20,6 +22,7 @@ struct TestTwitterSwiftUIApp: App {
             NavigationView {
                 ContentView()
             }
+            .environmentObject(viewModel)
         }
     }
 }
