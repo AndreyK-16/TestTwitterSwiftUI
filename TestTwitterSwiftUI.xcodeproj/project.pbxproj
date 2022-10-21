@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B66821212901C02400681686 /* ProfilePhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66821202901C02400681686 /* ProfilePhotoSelectorView.swift */; };
 		B683CE6A28FF31AC004E2151 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B683CE6928FF31AC004E2151 /* GoogleService-Info.plist */; };
 		B683CE6D28FF3717004E2151 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B683CE6C28FF3717004E2151 /* FirebaseAuth */; };
 		B683CE6F28FF3717004E2151 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B683CE6E28FF3717004E2151 /* FirebaseFirestore */; };
 		B683CE7128FF3717004E2151 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B683CE7028FF3717004E2151 /* FirebaseFirestoreSwift */; };
 		B683CE7328FF3717004E2151 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B683CE7228FF3717004E2151 /* FirebaseStorage */; };
 		B683CE7528FF3FA6004E2151 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CE7428FF3FA6004E2151 /* AuthViewModel.swift */; };
+		B69109D329030DAB004255F2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69109D229030DAB004255F2 /* ImagePicker.swift */; };
 		B6BA959728FACDF700025C2D /* NewTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA959628FACDF700025C2D /* NewTweetView.swift */; };
 		B6BA959928FAD38900025C2D /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA959828FAD38900025C2D /* TextArea.swift */; };
 		B6BA959E28FAE9EB00025C2D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA959D28FAE9EB00025C2D /* LoginView.swift */; };
@@ -40,8 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B66821202901C02400681686 /* ProfilePhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelectorView.swift; sourceTree = "<group>"; };
 		B683CE6928FF31AC004E2151 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B683CE7428FF3FA6004E2151 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		B69109D229030DAB004255F2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		B6BA959628FACDF700025C2D /* NewTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetView.swift; sourceTree = "<group>"; };
 		B6BA959828FAD38900025C2D /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
 		B6BA959D28FAE9EB00025C2D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -84,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B69109D129030D96004255F2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B69109D229030DAB004255F2 /* ImagePicker.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		B6BA959328FACDC200025C2D /* UploadTweet */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +134,7 @@
 			children = (
 				B6BA959D28FAE9EB00025C2D /* LoginView.swift */,
 				B6BA959F28FAE9FC00025C2D /* RegistrationView.swift */,
+				B66821202901C02400681686 /* ProfilePhotoSelectorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +174,7 @@
 		B6D0A64E28F5F23C00E63388 /* TestTwitterSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				B69109D129030D96004255F2 /* Utils */,
 				B6D0A66028F5F26900E63388 /* Extentions */,
 				B6D0A65F28F5F26700E63388 /* Model */,
 				B6D0A65E28F5F26400E63388 /* Service */,
@@ -455,6 +469,7 @@
 			files = (
 				B6F370EE28F8AA6000E08E01 /* SideMenuOptionView.swift in Sources */,
 				B6D0A66928F5F3C200E63388 /* FeedView.swift in Sources */,
+				B69109D329030DAB004255F2 /* ImagePicker.swift in Sources */,
 				B6D0A65228F5F23C00E63388 /* ContentView.swift in Sources */,
 				B6D0A67828F6029800E63388 /* NotificationView.swift in Sources */,
 				B6BA95A428FB1AEA00025C2D /* CustomInputField.swift in Sources */,
@@ -469,6 +484,7 @@
 				B6BA959E28FAE9EB00025C2D /* LoginView.swift in Sources */,
 				B6BF9A3C28FB24E500EE5DBD /* AuthHeaderView.swift in Sources */,
 				B6BA95A028FAE9FC00025C2D /* RegistrationView.swift in Sources */,
+				B66821212901C02400681686 /* ProfilePhotoSelectorView.swift in Sources */,
 				B6BA959728FACDF700025C2D /* NewTweetView.swift in Sources */,
 				B683CE7528FF3FA6004E2151 /* AuthViewModel.swift in Sources */,
 				B6BA95A228FB0E4900025C2D /* RoundedShape.swift in Sources */,
