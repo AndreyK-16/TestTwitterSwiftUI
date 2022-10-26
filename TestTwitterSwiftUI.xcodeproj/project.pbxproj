@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		B60D894D2907344900059BEC /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D894C2907344900059BEC /* ImageUploader.swift */; };
 		B66821212901C02400681686 /* ProfilePhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66821202901C02400681686 /* ProfilePhotoSelectorView.swift */; };
+		B66999DD290993FE001D64A5 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66999DC290993FE001D64A5 /* UserService.swift */; };
+		B66999DF290996F3001D64A5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66999DE290996F3001D64A5 /* User.swift */; };
+		B66999E22909BC7C001D64A5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B66999E12909BC7C001D64A5 /* Kingfisher */; };
 		B683CE6A28FF31AC004E2151 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B683CE6928FF31AC004E2151 /* GoogleService-Info.plist */; };
 		B683CE6D28FF3717004E2151 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B683CE6C28FF3717004E2151 /* FirebaseAuth */; };
 		B683CE6F28FF3717004E2151 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B683CE6E28FF3717004E2151 /* FirebaseFirestore */; };
@@ -45,6 +48,8 @@
 /* Begin PBXFileReference section */
 		B60D894C2907344900059BEC /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		B66821202901C02400681686 /* ProfilePhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelectorView.swift; sourceTree = "<group>"; };
+		B66999DC290993FE001D64A5 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		B66999DE290996F3001D64A5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B683CE6928FF31AC004E2151 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B683CE7428FF3FA6004E2151 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		B69109D229030DAB004255F2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -84,6 +89,7 @@
 				B683CE7328FF3717004E2151 /* FirebaseStorage in Frameworks */,
 				B683CE6F28FF3717004E2151 /* FirebaseFirestore in Frameworks */,
 				B683CE7128FF3717004E2151 /* FirebaseFirestoreSwift in Frameworks */,
+				B66999E22909BC7C001D64A5 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				B60D894C2907344900059BEC /* ImageUploader.swift */,
+				B66999DC290993FE001D64A5 /* UserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -224,6 +231,7 @@
 		B6D0A65F28F5F26700E63388 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B66999DE290996F3001D64A5 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -411,6 +419,7 @@
 				B683CE6E28FF3717004E2151 /* FirebaseFirestore */,
 				B683CE7028FF3717004E2151 /* FirebaseFirestoreSwift */,
 				B683CE7228FF3717004E2151 /* FirebaseStorage */,
+				B66999E12909BC7C001D64A5 /* Kingfisher */,
 			);
 			productName = TestTwitterSwiftUI;
 			productReference = B6D0A64C28F5F23C00E63388 /* TestTwitterSwiftUI.app */;
@@ -442,6 +451,7 @@
 			mainGroup = B6D0A64328F5F23C00E63388;
 			packageReferences = (
 				B683CE6B28FF3717004E2151 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B66999E02909BC7C001D64A5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = B6D0A64D28F5F23C00E63388 /* Products */;
 			projectDirPath = "";
@@ -472,6 +482,7 @@
 			files = (
 				B6F370EE28F8AA6000E08E01 /* SideMenuOptionView.swift in Sources */,
 				B6D0A66928F5F3C200E63388 /* FeedView.swift in Sources */,
+				B66999DD290993FE001D64A5 /* UserService.swift in Sources */,
 				B69109D329030DAB004255F2 /* ImagePicker.swift in Sources */,
 				B6D0A65228F5F23C00E63388 /* ContentView.swift in Sources */,
 				B6D0A67828F6029800E63388 /* NotificationView.swift in Sources */,
@@ -489,6 +500,7 @@
 				B6BF9A3C28FB24E500EE5DBD /* AuthHeaderView.swift in Sources */,
 				B6BA95A028FAE9FC00025C2D /* RegistrationView.swift in Sources */,
 				B66821212901C02400681686 /* ProfilePhotoSelectorView.swift in Sources */,
+				B66999DF290996F3001D64A5 /* User.swift in Sources */,
 				B6BA959728FACDF700025C2D /* NewTweetView.swift in Sources */,
 				B683CE7528FF3FA6004E2151 /* AuthViewModel.swift in Sources */,
 				B6BA95A228FB0E4900025C2D /* RoundedShape.swift in Sources */,
@@ -700,6 +712,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B66999E02909BC7C001D64A5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		B683CE6B28FF3717004E2151 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -711,6 +731,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B66999E12909BC7C001D64A5 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B66999E02909BC7C001D64A5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		B683CE6C28FF3717004E2151 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B683CE6B28FF3717004E2151 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
