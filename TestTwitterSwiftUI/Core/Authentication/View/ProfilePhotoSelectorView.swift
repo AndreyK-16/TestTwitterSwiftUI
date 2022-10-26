@@ -12,6 +12,7 @@ struct ProfilePhotoSelectorView: View {
     @State private var isShowImagePicker = false
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         VStack {
@@ -22,21 +23,56 @@ struct ProfilePhotoSelectorView: View {
                 print("Pick image here...")
                 isShowImagePicker.toggle()
             } label: {
-                Image("plusPhoto")
-                    .resizable()
-                    .renderingMode(.template)
-                    .scaledToFill()
-                    .frame(width: 180, height: 180)
-                    .padding(.top, 44)
-                    .foregroundColor(.blue)
+                if let profileImage = profileImage {
+                    profileImage
+                        .resizable()
+                        .modifier(ProfileImageModifier())
+                } else {
+                    Image("plusPhoto")
+                        .renderingMode(.template)
+                        .modifier(ProfileImageModifier())
+                }
             }
-            .sheet(isPresented: $isShowImagePicker) {
+            .sheet(isPresented: $isShowImagePicker, onDismiss: loadImage) {
                 ImagePicker(selectedImage: $selectedImage)
+            }
+            .padding(.top, 44)
+            
+            if let selectedImage = selectedImage {
+                Button {
+                    viewModel.uploadProfileImage(selectedImage)
+                } label: {
+                    Text("Continue")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(.blue)
+                        .clipShape(Capsule())
+                }
+                .padding()
+                .shadow(color: .gray.opacity(0.5), radius: 15, x: 2, y: 2)
             }
             
             Spacer()
         }
         .ignoresSafeArea()
+    }
+    
+///    функция  загружает картинку из памяти телефона на аватарку, используется в кложуре onDismiss в модификаторе .sheet
+    func loadImage() {
+        guard let selectedImage = selectedImage else { return }
+        profileImage = Image(uiImage: selectedImage)
+    }
+}
+
+private struct ProfileImageModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .scaledToFill()
+            .frame(width: 180, height: 180)
+            .foregroundColor(.blue)
+            .clipShape(Circle())
     }
 }
 

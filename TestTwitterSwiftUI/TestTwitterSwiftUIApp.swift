@@ -20,8 +20,7 @@ struct TestTwitterSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-//                ContentView()
-                ProfilePhotoSelectorView()
+                ContentView()
             }
             .environmentObject(viewModel)
         }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60D894D2907344900059BEC /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D894C2907344900059BEC /* ImageUploader.swift */; };
 		B66821212901C02400681686 /* ProfilePhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66821202901C02400681686 /* ProfilePhotoSelectorView.swift */; };
 		B683CE6A28FF31AC004E2151 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B683CE6928FF31AC004E2151 /* GoogleService-Info.plist */; };
 		B683CE6D28FF3717004E2151 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B683CE6C28FF3717004E2151 /* FirebaseAuth */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B60D894C2907344900059BEC /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		B66821202901C02400681686 /* ProfilePhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelectorView.swift; sourceTree = "<group>"; };
 		B683CE6928FF31AC004E2151 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B683CE7428FF3FA6004E2151 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		B6D0A65E28F5F26400E63388 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B60D894C2907344900059BEC /* ImageUploader.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				B69109D329030DAB004255F2 /* ImagePicker.swift in Sources */,
 				B6D0A65228F5F23C00E63388 /* ContentView.swift in Sources */,
 				B6D0A67828F6029800E63388 /* NotificationView.swift in Sources */,
+				B60D894D2907344900059BEC /* ImageUploader.swift in Sources */,
 				B6BA95A428FB1AEA00025C2D /* CustomInputField.swift in Sources */,
 				B6D0A65028F5F23C00E63388 /* TestTwitterSwiftUIApp.swift in Sources */,
 				B6F370D928F7502F00E08E01 /* TweetFilterViewModel.swift in Sources */,
