@@ -33,6 +33,7 @@ struct ProfileView: View {
             
             Spacer()
         }
+        .navigationBarHidden(true)
     }
 }
 
@@ -50,12 +51,11 @@ struct ProfileView_Previews: PreviewProvider {
 extension ProfileView {
     
     var headerView: some View {
-        ZStack(alignment: .bottomLeading) {
+        ZStack(alignment: .topLeading) {
             Color(.systemBlue)
                 .ignoresSafeArea()
             
-            VStack {
-                
+            ZStack {
                 Button {
                     mode.wrappedValue.dismiss()
                 } label: {
@@ -63,10 +63,11 @@ extension ProfileView {
                         .resizable()
                         .frame(width: 20, height: 16)
                         .foregroundColor(.white)
-                        .offset(x: 16, y: 12)
+                        .padding()
+                        .offset(x: 16)
                 }
-                
-                
+            }
+            
                 KFImage(URL(string: user.profileImageUrl))
                     .resizable()
                     .scaledToFill()
@@ -74,7 +75,6 @@ extension ProfileView {
                     .frame(width: 72, height: 72)
                     .padding()
                     .offset(x: 16, y: 34)
-            }
         }
         .frame(height: 96)
         .padding(.bottom)

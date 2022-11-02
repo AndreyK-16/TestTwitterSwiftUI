@@ -20,7 +20,7 @@ struct ProfilePhotoSelectorView: View {
                            subtitle: "Add a profile photo")
             
             Button {
-                print("Pick image here...")
+                print("DEBUG: Pick image here...")
                 isShowImagePicker.toggle()
             } label: {
                 if let profileImage = profileImage {
@@ -40,6 +40,7 @@ struct ProfilePhotoSelectorView: View {
             
             if let selectedImage = selectedImage {
                 Button {
+                    print("DEBUG: press Continue button ...")
                     viewModel.uploadProfileImage(selectedImage)
                 } label: {
                     Text("Continue")

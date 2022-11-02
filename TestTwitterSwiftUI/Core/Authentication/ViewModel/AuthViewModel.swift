@@ -18,6 +18,7 @@ class AuthViewModel: ObservableObject {
     
     init() {
         self.userSession = Auth.auth().currentUser
+        self.fetchUser()
         
         fetchUser()
     }
@@ -32,7 +33,7 @@ class AuthViewModel: ObservableObject {
             
             guard let user = result?.user else { return }
             self.userSession = user
-            print("DEBUG: Did log user in ...")
+            self.fetchUser()
         }
     }
     
@@ -80,11 +81,14 @@ class AuthViewModel: ObservableObject {
                 .document(uid)
                 .updateData(["profileImageUrl": profileImageUrl]) { _ in
                     self.userSession = self.tempUserSession
+                    self.fetchUser()
                 }
         }
         
     }
     
+/// Используется для перезагрузки данных при их изменении.
+/// Func use for reload data when this data is changed.
     func fetchUser() {
         guard let uid = self.userSession?.uid else { return }
         
