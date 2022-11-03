@@ -28,13 +28,28 @@ struct TweetService {
                 completion(true)
             }
     }
-    
+    /// Функция для получения твитов на вкладке Home, твиты упорядочены по времени создания.
+    /// The function  is used to fetch tweets to HomeView, a tweets is ordered by timestamp.
     func fetchTweet(completion: @escaping([Tweet]) -> Void) {
         Firestore.firestore().collection("tweets")
+            .order(by: "timestamp", descending: true)
             .getDocuments { snapshot, _ in
                 guard let documents = snapshot?.documents else { return }
                 let tweets = documents.compactMap({try? $0.data(as: Tweet.self) })
                 completion(tweets)
+                
+            }
+    }
+    ///Функция для получения твитов во вкладке Профиль, твиты упорядочены по времени создания и от пользователя-владельца профиля.
+    ///The finction is used to fetch tweet to ProfileView,  a tweets is ordered by timestamp.
+    func fetchTweets(forUid uid: String, completion: @escaping([Tweet]) -> Void) {
+        Firestore.firestore().collection("tweets")
+            .order(by: "timestamp", descending: true)
+            .whereField("uid", isEqualTo: uid)
+            .getDocuments { snapshot, _ in
+                guard let documents = snapshot?.documents else { return }
+                let tweets = documents.compactMap({try? $0.data(as: Tweet.self) })
+                completion(tweets.sorted(by: {$0.timestamp.dateValue() > $1.timestamp.dateValue() }))
             }
     }
 }

@@ -22,6 +22,7 @@
 		B683CE7328FF3717004E2151 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B683CE7228FF3717004E2151 /* FirebaseStorage */; };
 		B683CE7528FF3FA6004E2151 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CE7428FF3FA6004E2151 /* AuthViewModel.swift */; };
 		B69109D329030DAB004255F2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69109D229030DAB004255F2 /* ImagePicker.swift */; };
+		B69A4E1729142C53004B264E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69A4E1629142C53004B264E /* ProfileViewModel.swift */; };
 		B6AFAB822912A86600D1C3C2 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFAB812912A86600D1C3C2 /* ExploreViewModel.swift */; };
 		B6AFAB842912E70200D1C3C2 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFAB832912E70200D1C3C2 /* SearchBar.swift */; };
 		B6AFAB86291305C000D1C3C2 /* TweetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFAB85291305C000D1C3C2 /* TweetService.swift */; };
@@ -62,6 +63,7 @@
 		B683CE6928FF31AC004E2151 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B683CE7428FF3FA6004E2151 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		B69109D229030DAB004255F2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		B69A4E1629142C53004B264E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		B6AFAB812912A86600D1C3C2 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		B6AFAB832912E70200D1C3C2 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		B6AFAB85291305C000D1C3C2 /* TweetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetService.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				B6F370D828F7502F00E08E01 /* TweetFilterViewModel.swift */,
+				B69A4E1629142C53004B264E /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				B6D0A67628F6026C00E63388 /* ExploreView.swift in Sources */,
 				B6D0A66F28F5FD2E00E63388 /* MainTabView.swift in Sources */,
 				B6F370EA28F8769200E08E01 /* UserStatsView.swift in Sources */,
+				B69A4E1729142C53004B264E /* ProfileViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
