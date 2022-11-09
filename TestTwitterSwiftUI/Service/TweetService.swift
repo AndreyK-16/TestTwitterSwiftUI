@@ -53,3 +53,87 @@ struct TweetService {
             }
     }
 }
+
+// MARK: - Likes
+extension TweetService {
+    
+    /// Функция используется для сохранения твитов с лайками в Firebase
+    /// The finction is used to save like tweets to Firebase
+    func likeTweet(_ tweet: Tweet, completion: @escaping() -> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let tweetId = tweet.id else { return }
+        
+        let userLikesRef = Firestore.firestore()
+            .collection("users")
+            .document(uid)
+            .collection("user-likes")
+        
+        Firestore.firestore().collection("tweets").document(tweetId)
+            .updateData(["likes": tweet.likes + 1]) { _ in
+                userLikesRef.document(tweetId).setData([:]) { _ in
+                    print("DEBUG: Did like tweet and now we should update UI")
+                    completion()
+                }
+            }
+    }
+    
+    /// Функция используется для удаления твитов с лайками в Firebase
+    /// The finction is used to delete like tweets to Firebase
+    func unlikeTweet(_ tweet: Tweet, completion: @escaping() -> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let tweetId = tweet.id else { return }
+        guard tweet.likes > 0 else { return }
+        
+        let userLikesRef = Firestore.firestore()
+            .collection("users")
+            .document(uid)
+            .collection("user-likes")
+        
+        Firestore.firestore().collection("tweets").document(tweetId)
+            .updateData(["likes": tweet.likes - 1]) { _ in
+                userLikesRef.document(tweetId).delete { _ in
+                    completion()
+                }
+            }
+    }
+    
+    /// Функция используется для отображения твитов с лайками в ProfileView
+    /// The finction is used to show like tweets to ProfileView
+    func checkUserLikedTweet(_ tweet: Tweet, completion: @escaping(Bool) -> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let tweetId = tweet.id else { return }
+        
+        Firestore.firestore().collection("users")
+            .document(uid)
+            .collection("user-likes")
+            .document(tweetId).getDocument { snapshot, _ in
+                guard let snapshot = snapshot else { return }
+                completion(snapshot.exists)
+            }
+    }
+    
+    /// Функция используется для получения твитов с лайками в ProfileView
+    /// The finction is used to fetch a tweets with likes to ProfileView
+    func fetchLikedTweets(forId uid: String, completion: @escaping([Tweet]) -> Void) {
+        var tweets = [Tweet]()
+        Firestore.firestore().collection("users")
+            .document(uid)
+            .collection("user-likes")
+            .getDocuments { snapshot, _ in
+                guard let documents = snapshot?.documents else { return }
+                
+                documents.forEach { doc in
+                    let tweetID = doc.documentID
+                    
+                    Firestore.firestore().collection("tweets")
+                        .document(tweetID)
+                        .getDocument { snapshot, _ in
+                            guard let tweet = try? snapshot?.data(as: Tweet.self) else { return }
+                            tweets.append(tweet)
+                            
+                            completion(tweets)
+                        }
+                }
+            }
+    }
+}
